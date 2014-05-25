@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.sample.test</groupId>
+  <artifactId>SampleProject</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.11</version>
+  	</dependency>
+  	<dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-java</artifactId>
+		<version>2.37.1</version>
+	</dependency>
+  	<dependency>
+  		<groupId>log4j</groupId>
+  		<artifactId>log4j</artifactId>
+  		<version>1.2.17</version>
+  	</dependency>
+  </dependencies>
+</project>
+
+
+
+
+public abstract class BaseTest 
+{
+	private static Logger log = Logger.getLogger(BaseTest.class.getName());
+	
+	//This browser object will be shared across the framework
+	public WebDriver browser;
+	
+	@Before
+	public void startBrowser()
+	{
+		DOMConfigurator.configure("log4j.xml");
+		browser = new FirefoxDriver(); 
+		log.info("browser is initialized ");
+	}

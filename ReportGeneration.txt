@@ -1,0 +1,4 @@
+I had pom.xml file in my maven project. In (project object model)pom.xml I add "maven-surefire-report-plugin". It helps to generate 
+report. after run my project using "mvn site" command  it automatically create surefire reports. in the report
+there creats surefire-report.html file. surefire report  shows according project summary wise, Packege list wise, Test Case wise report
+and it also shows how many error there, what percentage of test failed, what percentage of  test success, execution time for the whole project and execution time for the individual test cases  

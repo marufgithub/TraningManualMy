@@ -1,0 +1,16 @@
+I have been working as a QA Engineer for last 8 years.
+Mostly I was testing web application Most of the project I have worked was agile environment and typically the sprints took two weeks.
+Sprint cycle/scrum/sprint.Actually I am expert in automating test process  using open source tool like selenium web driver.
+Though sometimes I was involved in creating  test plan beased on requirements but mainly I was engaged in automation.
+
+Daily basis I write automation scripts using java programming.
+As a framework level I have used junit, testNG, Page Object Model for my code unit testing. 
+For building the project I have used maven and for version control I have used git and svn. 
+And for scheduling my automtion scripts run I have used jenkins and for reporing and quick debugging I have used log4j and junit plugin in jenkins.
+For front end automation I have used selenium automation tool. I wrote sql query for backend validation.
+
+
+If I summarize myself I can say I am expert in qaing web based application manual and automation. 
+
+
+//div[contains(@class,'connect')]

@@ -1,0 +1,58 @@
+DB Name: test
+Table Name: customer
+
+1.SELECT DISTINCT column_name,column_name FROM table_name;
+   exam:select DISTINCT City from customer;
+
+2.SELECT column_name,column_name FROM table_name WHERE column_name operator value;
+   exam: select * from customer where Country='UK';
+
+3.SELECT column_name,column_name FROM table_name ORDER BY column_name,column_name ASC|DESC;
+   exam: select * from customer ORDER BY PostalCode DESC;
+
+4.DELETE FROM table_name WHERE some_column=some_value;DELETE FROM table_name WHERE some_column=some_value;
+
+5.UPDATE table_name SET column1=value1,column2=value2,... WHERE some_column=some_value;
+   exam:UPDATE customer SET customerName='LazyAsad',Address='Frisby' WHERE customerID=2;
+6.SELECT column_name(s) FROM table_name WHERE column_name LIKE pattern;
+   exam:select * from customer WHERE Address LIKE '%Obe%';
+
+7.SELECT column_name(s) FROM table_name WHERE column_name IN (value1,value2,...);
+   exam:select * from customer WHERE PostalCode IN('12009','15009');
+8.SELECT column_name(s)FROM table_name WHERE column_name BETWEEN value1 AND value2;
+  exam: select * from customer WHERE PostalCode BETWEEN '12000' AND '16000'; 
+
+8.SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+  exam:SELECT orders.orderID, customer.customerName, orders.employeeID FROM orders INNER JOIN customer ON orders.customerID=customer.customerID;
+ 
+9.SELECT column_name(s) FROM table1 INNER JOIN table2 ON table1.column_name=table2.column_name;
+  exam: Select customerName,Address,City,customer.customerID from customer INNER JOIN orders ON customer.customerID=orders.customerID;
+
+10.SELECT column_name(s) FROM table1 LEFT JOIN table2 ON table1.column_name=table2.column_name;
+   exam:select customerName,Address,City,employeeID from customer LEFT JOIN orders ON orders.customerID=customer.customerID;
+
+11.SELECT column_name(s) FROM table1 RIGHT JOIN table2 ON table1.column_name=table2.column_name;
+  exam:select customerName,Address,City,employeeID from customer RIGHT JOIN orders ON customer.customerID=orders.customerID;
+
+12.SELECT column_name(s) FROM table1 UNION SELECT column_name(s) FROM table2;
+    exam:  select city from customer UNION select city from orders; 
+13.SELECT column_name(s) FROM table1 MINUS SELECT column_name(s) FROM table2;
+    exam:  select city from customer MINUS select city from orders;   // MINUS and INTERSECT command does not support in MYSQL.
+
+13.ALTER TABLE table_name ADD column_name datatype
+  exam: ALTER table customer ADD PRIMARY KEY(customerID);
+14. example of Foreign key:
+    create table orders(orderID int,customerID varchar(10),employeeID int,shi
+pperID int,PRIMARY KEY(orderID),FOREIGN KEY(customerID) REFERENCES customer(cust
+omerID));
+
+15.  select amount from payments order by amount desc limit 5,1 ............... will display the 6 highest amount from payments
+
+16.SELECT orders.orderID, customer.customerName, orders.employeeID FROM orders INNER JOIN customer ON orders.customerID=customer.customerID;
+
+17. SELECT employees.lastName, COUNT(orders.orderNumber) AS NumberOfOrders FROM orders
+INNER JOIN employees
+ON orders.EmployeeID=Employees.EmployeeID
+WHERE LastName='Davolio' OR LastName='Fuller'
+GROUP BY LastName
+HAVING COUNT(Orders.OrderID) > 25;
